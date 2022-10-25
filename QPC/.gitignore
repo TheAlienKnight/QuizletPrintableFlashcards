@@ -109,8 +109,5 @@ dist
 # Prettier
 .prettierrc.json
 
-# Public Folder
-public/
-
 # Development specific README.md
 README.md
