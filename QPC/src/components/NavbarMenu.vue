@@ -45,7 +45,7 @@
 // @ is an alias to /src
 import AccessibilityMenu from "@/components/AccessibilityMenu.vue";
 export default {
-    name: "NavBar",
+    name: "NavbarMenu",
     components: {
         AccessibilityMenu,
     },
