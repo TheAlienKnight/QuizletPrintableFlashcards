@@ -1,0 +1,342 @@
+@charset "utf-8";
+@import "./themes/colors.scss";
+@import "./themes/dark.scss";
+@import "./themes/light.scss";
+$primary: $blue;
+$link-invert: $primary;
+$link: $primary;
+$family-sans-serif: "Raleway-Light",
+    serif;
+$family-primary: $family-sans-serif;
+@import "../../node_modules/bulma/bulma.sass";
+
+@font-face {
+    font-family: Roboto-Flex;
+    src: url(../assets/fonts/roboto-flex/RobotoFlex-VariableFont_GRAD\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf);
+}
+
+@font-face {
+    font-family: Raleway-Light;
+    src: url(../assets/fonts/raleway/Raleway-Light.ttf);
+}
+
+@font-face {
+    font-family: Raleway-Bold;
+    src: url(../assets/fonts/raleway/Raleway-Bold.ttf);
+}
+
+@font-face {
+    font-family: Raleway-Medium;
+    src: url(../assets/fonts/raleway/Raleway-Medium.ttf);
+}
+
+@font-face {
+    font-family: Raleway-Regular;
+    src: url(../assets/fonts/raleway/Raleway-Regular.ttf);
+}
+
+@font-face {
+    font-family: Raleway-SemiBold;
+    src: url(../assets/fonts/raleway/Raleway-SemiBold.ttf);
+}
+
+
+// font selections
+p,
+span,
+div,
+button,
+a,
+input,
+textarea {
+    font-family: Raleway-Light;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+    font-family: Raleway-Light;
+    font-style: normal;
+    font-weight: thin;
+}
+
+// Containers on mobiles are a little odd
+.container.mobile {
+    @include touch {
+        width: 90%;
+        margin: auto;
+
+    }
+}
+
+// Navbar customization
+.navbar .navbar-item:hover,
+.navbar .navbar-link.attention:hover,
+.navbar .navbar-link.attention:focus {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.navbar-item {
+    font-family: "Raleway-Light";
+    font-style: thin;
+    font-size: 22px;
+}
+
+.navbar {
+    border-bottom: 2px solid $dark;
+}
+
+// fullheights
+// General rule of thumb for mobile devices, unless they are freakishly small, is x2 the height
+.is-fullheight-10vh {
+    height: 10vh;
+
+    @include touch {
+        height: 10vh+10vh;
+    }
+}
+
+.is-fullheight-20vh {
+    height: 20vh;
+
+    @include touch {
+        height: 20vh+20vh;
+    }
+}
+
+.is-fullheight-30vh {
+    height: 30vh;
+
+    @include touch {
+        height: 30vh+30vh;
+    }
+}
+
+.is-fullheight-40vh {
+    height: 40vh;
+
+    @include touch {
+        height: 40vh+40vh;
+    }
+}
+
+.is-fullheight-50vh {
+    height: 50vh;
+
+    @include touch {
+        height: 50vh+50vh;
+    }
+}
+
+.is-fullheight-60vh {
+    height: 60vh;
+
+    @include touch {
+        height: 60vh+60vh;
+    }
+}
+
+.is-fullheight-70vh {
+    height: 70vh;
+
+    @include touch {
+        height: 70vh+70vh;
+    }
+}
+
+.is-fullheight-80vh {
+    height: 80vh;
+
+    @include touch {
+        height: 80vh+80vh;
+    }
+}
+
+.is-fullheight-90vh {
+    height: 90vh;
+
+    @include touch {
+        height: 90vh+90vh;
+    }
+}
+
+.is-fullheight-100vh {
+    height: 100vh;
+
+    @include touch {
+        height: 100vh+100vh;
+    }
+}
+
+// width operators 
+.is-half {
+    width: 50%;
+    margin: auto;
+
+    @include touch {
+        width: 90%
+    }
+}
+
+// Footer config
+.footerObject {
+    border-top: 2px solid $dark;
+    height: 300px;
+    background: linear-gradient(to top, rgb(0, 0, 0) 10%, rgb(0, 12, 29) 25%, rgb(0, 57, 135) 80%, rgb(0, 74, 173) 100%);
+
+    @include touch {
+        height: auto;
+        width: auto;
+    }
+}
+
+// boxes
+.listing {
+    background-color: whitesmoke;
+    color: rgb(0, 0, 0);
+    height: 180px;
+    width: 80%;
+    margin: auto;
+
+    @include touch {
+        width: auto;
+        height: auto;
+    }
+}
+
+// logo sizing
+.is-home-logo {
+    margin: auto;
+    width: 250px;
+    border-radius: 180px;
+}
+
+// some grow/shrink/rotate animations never hurt
+.on-hover-grow {
+    transition: transform .4s ease-in-out;
+}
+
+.on-hover-shrink {
+    transition: transform .2s ease-in-out;
+}
+
+.on-hover-rotate {
+    transition: transform .4s ease-in-out;
+}
+
+.on-hover-rotate:hover {
+    transform: rotate(20deg);
+}
+
+.on-hover-shrink:hover {
+    transform: scale(0.90);
+}
+
+.on-hover-grow:hover {
+    transform: scale(1.15);
+}
+
+// block img drag
+
+img,
+.image {
+    // user-drag: none; 
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+// img color inversion
+img.invert100 {
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+
+// font sizes
+.tiny-text {
+    font-size: 18px;
+}
+.small-text {
+    font-size: 20px;
+}
+.subtitle-text {
+    font-size: 22px;
+}
+.medium-text {
+    font-size: 24px;
+}
+
+.large-text {
+    font-size: 32px;
+}
+
+input {
+    font-size: 22px;
+    padding-left: 5px;
+}
+
+// Special sizings
+.container.mobile.home {
+    width: 80%;
+    text-align: center;
+
+    @include touch {
+        width: 90%;
+        margin: auto;
+
+    }
+}
+
+// Special buttons
+.button.transparent.social {
+    border: none;
+    border-radius: 50% !important;
+    background-color: transparent;
+}
+
+// Why are modals so weird width wise...
+.modal-card {
+    width: 80%;
+
+    @include touch {
+        width: 98%;
+        margin: auto;
+    }
+}
+
+// Modify rounding, things are too round...
+.box {
+    border-radius: 2px;
+
+}
+// fix the background color being wonky
+.modal {
+    background-color: #000000a6 !important;
+}
+.dark .modal {
+    background-color: #292929a6 !important;
+}
+
+// Breadcrumb customization
+nav.breadcrumb .small-text {
+    font-size: 22px; // Not too small, but also not the same as the navbar. If it happens to be somewhat smaller on an odd device like a TV, there are accessibility options
+}
+nav.breadcrumb .small-text li.main-crumb a {
+    font-weight: bold;
+    cursor: default !important;
+}
+nav.breadcrumb a.is-active {
+    text-decoration: underline;
+    // an offset looks cleaner
+    text-underline-offset: 5px;
+}
+
+// accessibility
+@import "./themes/accessibility.scss";

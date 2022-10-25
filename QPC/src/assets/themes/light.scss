@@ -1,0 +1,37 @@
+@import "./colors.scss";
+/*
+
+LIGHT THEME SPECIFICS
+
+*/
+
+#home {
+    background-color: $white;
+    color: black;
+}
+.light .button {
+    background-color: $blue !important;
+    color: white;
+}
+.light .button.transparent {
+    background-color: transparent !important;
+    color: black;
+}
+.box.darker {
+    background-color: rgb(234, 233, 233);
+}
+
+hr {
+    background-color: black !important;
+}
+.light.navbar {
+    background-color: $white-darker;
+}
+.light .navbar-item:focus {
+    background-color: $blue;
+    color: $white;
+}
+.light .navbar-item:hover {
+    background-color: $blue !important;
+    color: $white;
+}

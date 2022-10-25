@@ -1,0 +1,136 @@
+/*
+
+Accessibility Tweaks
+
+*/
+
+// Clown Red/Lavender Purple Scheme (Main class = txtgradient-bm)
+
+.txtgradient-crlp p,
+.txtgradient-crlp a,
+.txtgradient-crlp input,
+.txtgradient-crlp textarea,
+.txtgradient-crlp button,
+.txtgradient-crlp .button,
+.txtgradient-crlp h1,
+.txtgradient-crlp h2,
+.txtgradient-crlp h3,
+.txtgradient-crlp h4,
+.txtgradient-crlp h5,
+.txtgradient-crlp h6,
+.txtgradient-crlp option,
+.txtgradient-crlp li,
+.txtgradient-crlp select,
+.txtgradient-crlp label {
+    background: -webkit-linear-gradient(left, rgb(229, 56, 56), rgb(182, 121, 215), rgb(229, 56, 56), rgb(182, 121, 215));
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 120%;
+}
+
+
+// Dark Blue/Green (Main class = txtgradient-blgl)
+
+.txtgradient-blgl p,
+.txtgradient-blgl a,
+.txtgradient-blgl input,
+.txtgradient-blgl textarea,
+.txtgradient-blgl button,
+.txtgradient-blgl .button,
+.txtgradient-blgl h1,
+.txtgradient-blgl h2,
+.txtgradient-blgl h3,
+.txtgradient-blgl h4,
+.txtgradient-blgl h5,
+.txtgradient-blgl h6,
+.txtgradient-blgl option,
+.txtgradient-blgl li,
+.txtgradient-blgl select,
+.txtgradient-blgl label {
+    background: -webkit-linear-gradient(left, rgb(24, 11, 200), rgb(176, 163, 19), rgb(24, 11, 200));
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 120%;
+}
+
+// Sky Blue/Lemon Yellow (Dark Mode Changeover) (Main class = txtgradient-blgl)
+
+.dark .txtgradient-blgl p,
+.dark .txtgradient-blgl a,
+.dark .txtgradient-blgl input,
+.dark .txtgradient-blgl textarea,
+.dark .txtgradient-blgl button,
+.dark .txtgradient-blgl .button,
+.dark .txtgradient-blgl h1,
+.dark .txtgradient-blgl h2,
+.dark .txtgradient-blgl h3,
+.dark .txtgradient-blgl h4,
+.dark .txtgradient-blgl h5,
+.dark .txtgradient-blgl h6,
+.dark .txtgradient-blgl option,
+.dark .txtgradient-blgl li,
+.dark .txtgradient-blgl select,
+.dark .txtgradient-blgl label {
+    background: -webkit-linear-gradient(left, rgb(41, 219, 225), rgb(218, 215, 15), rgb(41, 219, 225));
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 120%;
+}
+
+// Bold Text (Forced Override)
+.txtstyle-bold p,
+.txtstyle-bold a,
+.txtstyle-bold input,
+.txtstyle-bold textarea,
+.txtstyle-bold h1,
+.txtstyle-bold h2,
+.txtstyle-bold h3,
+.txtstyle-bold h4,
+.txtstyle-bold h5,
+.txtstyle-bold h6,
+.txtstyle-bold option,
+.txtstyle-bold li,
+.txtstyle-bold .button,
+.txtstyle-bold button,
+.txtstyle-bold select,
+.txtstyle-bold label {
+    font-family: "Raleway-SemiBold";
+}
+
+// Bolder Text (Forced Override)
+.txtstyle-bolder p,
+.txtstyle-bolder a,
+.txtstyle-bolder input,
+.txtstyle-bolder textarea,
+.txtstyle-bolder h1,
+.txtstyle-bolder h2,
+.txtstyle-bolder h3,
+.txtstyle-bolder h4,
+.txtstyle-bolder h5,
+.txtstyle-bolder h6,
+.txtstyle-bolder option,
+.txtstyle-bolder li,
+.txtstyle-bolder .button,
+.txtstyle-bolder button,
+.txtstyle-bolder select,
+.txtstyle-bolder label {
+    font-family: "Raleway-Bold";
+}

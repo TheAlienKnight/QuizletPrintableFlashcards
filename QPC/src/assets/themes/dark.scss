@@ -1,0 +1,167 @@
+@import "./colors.scss";
+/*
+
+DARK THEME SPECIFICS
+
+*/
+
+#about.dark,
+#home.dark,
+#print.dark,
+#dashboard.dark {
+    background-color: $basically-black;
+    color: white;
+}
+
+.navbar.dark {
+    color: white;
+    background-color: $dark;
+    border-bottom: 2px solid white;
+}
+
+.navbar-end.dark {
+    background-color: $basically-black;
+}
+
+.dark a,
+a.dark {
+    color: $gold;
+}
+
+.dark a:hover,
+a.dark:hover {
+    color: $blue;
+}
+.dark .navbar-menu.is-active {
+    background-color: $dark;
+    border-top: 2px solid white;
+}
+.dark .navbar-item {
+    color: white !important;
+}
+.dark .navbar-item:focus {
+    background-color: $gold;
+    color: $white;
+}
+.dark .navbar-item:hover {
+    background-color: $gold !important;
+    color: $white;
+}
+
+.dark hr {
+    color: white !important;
+    background-color: white !important;
+    border-color: white !important;
+}
+
+.dark .box {
+    background-color: $dark;
+    color: white;
+}
+
+.dark.footerObject .box {
+    background-color: $basically-black;
+}
+
+.dark .box label {
+    color: white;
+}
+
+.dark .button,
+.dark .button.is-success {
+    background-color: $dark;
+    color: white;
+}
+.dark .button:hover, .dark.button:focus {
+    background-color: $gold;
+}
+.dark .button.is-success:hover, .dark .button.is-success:focus {
+    background-color: $gold;
+    color: white;
+}
+.dark input {
+    background-color: $dark-light;
+    box-shadow: none;
+    color: white;
+}
+
+.dark input::placeholder {
+    color: lightgray;
+}
+
+.dark input.plain {
+    border: 1px solid white;
+}
+
+.dark input.is-split {
+    margin: auto;
+    width: 40%;
+    height: 30px;
+}
+
+.dark .table {
+    background-color: $dark-light;
+    color: white;
+    border-color: white;
+}
+
+.dark .table tr td {
+    color: white;
+}
+
+.dark .textarea,
+.dark .textarea:focus {
+    background-color: $dark;
+    color: white;
+    border-color: white;
+}
+
+.textarea,
+.textarea:focus {
+    box-shadow: none !important;
+    border-color: $dark;
+}
+
+.dark .button:hover {
+    color: white;
+}
+
+.dark .box.lighter {
+    background-color: $dark-light;
+}
+
+.dark .modal-card-head {
+    background-color: $dark !important;
+    color: white !important;
+}
+
+.dark .modal-card-body {
+    color: white !important;
+    background-color: $dark !important;
+}
+
+.dark .modal-card-title {
+    color: white !important;
+}
+
+
+.dark .modal-card-foot {
+    background-color: $dark !important;
+    color: white !important;
+}
+
+.dark .label {
+    color: white;
+    text-align: left;
+}
+
+.dark .box.darker {
+    background-color: $dark;
+}
+
+.footerObject.dark {
+    border-top: 2px solid white;
+    height: 300px;
+    background: rgb(61, 90, 115);
+    background: linear-gradient(180deg, #181c26 0%, #0d0d0d 100%);
+}
