@@ -1,6 +1,8 @@
 import { randomUUID } from "crypto"
 class CardSet {
     id
+    title
+    description
     cards
     // Not sure if I will do anything with these values, may discard them later
     dateCreated
@@ -10,6 +12,8 @@ class CardSet {
     imported
     constructor(imported) {
         this.id = randomUUID()
+        this.title = "Untitled Set"
+        this.description = 'No Description Set'
         this.cards = []
         this.dateCreated = new Date().toLocaleDateString()
         this.dateLastViewed = this.dateCreated
@@ -18,6 +22,8 @@ class CardSet {
     }
     fromJSON(json) {
         json = JSON.parse(json)
+        this.title = json.title
+        this.description = json.description
         this.id = json.id
         this.cards = json.cards
         this.dateCreated = json.dateCreated
@@ -26,6 +32,8 @@ class CardSet {
     toJSON() {
         return {
             id: this.id,
+            title: this.title,
+            description: this.description,
             cards: this.cards,
             dateCreated: this.dateCreated,
             dateLastViewed: this.dateLastViewed,
