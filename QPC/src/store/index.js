@@ -19,6 +19,9 @@ export default createStore({
         }
       }
     },
+    storage: {
+      cardSets: []
+    }
   },
   getters: {
   },
