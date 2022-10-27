@@ -240,6 +240,9 @@ label {
 .on-hover-grow:hover {
     transform: scale(1.15);
 }
+.button.on-hover-grow:hover {
+    transform: scale(1.05);
+}
 
 // block img drag
 
@@ -283,6 +286,48 @@ input {
 }
 
 // Special sizings
+.set-content {
+    white-space: pre-wrap;
+}
+.centered {
+    text-align: center;
+    margin: auto;
+    width: auto;
+}
+.w60 {
+    width: 60%;
+    margin: auto;
+
+}
+
+.w50 {
+    width: 50%;
+    margin: auto;
+
+}
+
+.w70 {
+    width: 70%;
+    margin: auto;
+
+}
+
+.w40 {
+    width: 40%;
+    margin: auto;
+}
+
+.w40,
+.w50,
+.w60,
+.w70 {
+    // Anything smaller on touch devices and it becomes really smooshed
+    @include touch {
+        width: 90%;
+        margin: auto;
+    }
+}
+
 .container.mobile.home {
     width: 80%;
     text-align: center;

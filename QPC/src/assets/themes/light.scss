@@ -9,8 +9,20 @@ LIGHT THEME SPECIFICS
     background-color: $white;
     color: black;
 }
+.light .cardcard .box {
+    background-color: $muddy-white;
+    border: 1px solid $blue;
+    border-radius: 8px;
+}
+.light .is-separator {
+    background-color: $blue;
+    width: 1px !important;
+}
 .light .button {
     background-color: $blue !important;
+    color: white;
+}
+.light .button:focus, .light .button:hover {
     color: white;
 }
 .light .button.transparent {

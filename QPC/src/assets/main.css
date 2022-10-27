@@ -6,7 +6,9 @@ DARK THEME SPECIFICS
 #about.dark,
 #home.dark,
 #print.dark,
-#dashboard.dark {
+#dashboard.dark,
+#importset.dark,
+#newset.dark {
   background-color: #0d0d0d;
   color: white; }
 
@@ -21,6 +23,15 @@ DARK THEME SPECIFICS
 .dark a,
 a.dark {
   color: #b28735; }
+
+.dark .cardcard .box {
+  background-color: #181c26;
+  border: 1px solid #b28735;
+  border-radius: 8px; }
+
+.dark .is-separator {
+  background-color: #b28735;
+  width: 1px !important; }
 
 .dark a:hover,
 a.dark:hover {
@@ -146,8 +157,20 @@ LIGHT THEME SPECIFICS
   background-color: #f7f6f6;
   color: black; }
 
+.light .cardcard .box {
+  background-color: #eeeeee;
+  border: 1px solid #004aad;
+  border-radius: 8px; }
+
+.light .is-separator {
+  background-color: #004aad;
+  width: 1px !important; }
+
 .light .button {
   background-color: #004aad !important;
+  color: white; }
+
+.light .button:focus, .light .button:hover {
   color: white; }
 
 .light .button.transparent {
@@ -8222,6 +8245,9 @@ label {
 .on-hover-grow:hover {
   transform: scale(1.15); }
 
+.button.on-hover-grow:hover {
+  transform: scale(1.05); }
+
 img,
 .image {
   user-select: none;
@@ -8252,6 +8278,38 @@ img.invert100 {
 input {
   font-size: 22px;
   padding-left: 5px; }
+
+.set-content {
+  white-space: pre-wrap; }
+
+.centered {
+  text-align: center;
+  margin: auto;
+  width: auto; }
+
+.w60 {
+  width: 60%;
+  margin: auto; }
+
+.w50 {
+  width: 50%;
+  margin: auto; }
+
+.w70 {
+  width: 70%;
+  margin: auto; }
+
+.w40 {
+  width: 40%;
+  margin: auto; }
+
+@media screen and (max-width: 1023px) {
+  .w40,
+  .w50,
+  .w60,
+  .w70 {
+    width: 90%;
+    margin: auto; } }
 
 .container.mobile.home {
   width: 80%;

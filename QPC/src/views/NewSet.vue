@@ -27,6 +27,9 @@ export default {
         NavBar,
         FooterObject,
     },
+    beforeCreate() {
+        this.$store.dispatch('mapCards')
+    },
     data() {
         return {};
     },

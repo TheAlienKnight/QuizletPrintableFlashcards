@@ -8,19 +8,20 @@
         <br />
         <div class="container mobile">
             <h1 class="large-text" style="text-align: center">Flashcard Dashboard</h1>
-            <h4 class="small-text" style="text-align: center"><b>{{ $store.state.storage.cardSets.length }}</b> Sets
+            <h4 class="small-text" style="text-align: center"><b>{{ $store.state.cards.cardSets.length }}</b> Sets
             </h4>
             <hr>
-            <h2 class="medium-text" style="text-align: center" v-if="$store.state.storage.cardSets.length <= 0">😭 You don't have any saved sets!</h2>
+            <h2 class="medium-text" style="text-align: center" v-if="$store.state.cards.cardSets.length <= 0">😭 You
+                don't have any saved sets!</h2>
             <div class="columns">
                 <div class="column">
                     <CardSet
-                        v-for="set in $store.state.storage.cardSets.slice(0, Math.ceil($store.state.storage.cardSets.length / 2))"
+                        v-for="set in $store.state.cards.cardSets.slice(0, Math.ceil($store.state.cards.cardSets.length / 2))"
                         :key="set.id" :set="set"></CardSet>
                 </div>
                 <div class="column">
                     <CardSet
-                        v-for="set in $store.state.storage.cardSets.slice(Math.ceil($store.state.storage.cardSets.length / 2))"
+                        v-for="set in $store.state.cards.cardSets.slice(Math.ceil($store.state.cards.cardSets.length / 2))"
                         :key="set.id" :set="set"></CardSet>
                 </div>
             </div>
@@ -45,6 +46,9 @@ export default {
     },
     data() {
         return {};
+    },
+    beforeCreate() {
+        this.$store.dispatch('mapCards')
     },
     methods: {
     }

@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import { CardSet } from '../classes/CardSet'
 
 export default createStore({
   state: {
@@ -19,8 +20,9 @@ export default createStore({
         }
       }
     },
-    storage: {
-      cardSets: []
+    cards: {
+      cardSets: localStorage.getItem("cardSets") ? JSON.parse(localStorage.getItem("cardSets")) : [],
+      mapped: false
     }
   },
   getters: {
@@ -28,6 +30,19 @@ export default createStore({
   mutations: {
   },
   actions: {
+    mapCards() {
+      if (this.state.cards.mapped) return;
+      let newSets = []
+      this.state.cards.cardSets.forEach((card) => {
+        let classified = new CardSet()
+        classified.fromJSON(card)
+        newSets.push(classified)
+      })
+      this.state.cards.cardSets = newSets
+      console.log(this.state.cards)
+      this.state.cards.mapped = true
+      console.log("[Actions] Replaced JSON set data with CardSet class data.")
+    }
   },
   modules: {
   }

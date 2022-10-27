@@ -1,4 +1,4 @@
-import { randomUUID } from "crypto"
+import store from "../store"
 class CardSet {
     id
     title
@@ -11,7 +11,7 @@ class CardSet {
     // 
     imported
     constructor(imported) {
-        this.id = randomUUID()
+        this.id = self.crypto.randomUUID()
         this.title = "Untitled Set"
         this.description = 'No Description Set'
         this.cards = []
@@ -21,7 +21,6 @@ class CardSet {
         this.imported = imported
     }
     fromJSON(json) {
-        json = JSON.parse(json)
         this.title = json.title
         this.description = json.description
         this.id = json.id
@@ -41,14 +40,26 @@ class CardSet {
             imported: this.imported
         }
     }
-    createCard(term, definition) { 
+    createCards(termDefArray) {
+        termDefArray.forEach((card) => {
+            this.createCard(card.term, card.definition)
+        })
+    }
+    createCard(term, definition) {
         const card = {
-            id: randomUUID(),
+            id: self.crypto.randomUUID(),
             term: term,
-            definition: definition     
+            definition: definition
         }
         this.cards.push(card)
         return card;
+    }
+    createSet(title, description) {
+        this.title = title
+        this.description = description
+        store.state.cards.cardSets.push(this)
+        localStorage.setItem("cardSets", JSON.stringify(store.state.cards.cardSets.map((card) => card.toJSON())))
+        console.log("[Actions] New set created, updated Local Storage, and Vuex Store")
     }
     deleteCard(id) {
         this.cards = this.cards.filter((card) => card.id != id)

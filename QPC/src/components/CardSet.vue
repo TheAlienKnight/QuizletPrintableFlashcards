@@ -6,9 +6,9 @@
         $store.state.settings.accessibility.txtstyle,
     ]">
         <div class="box">
-            <h1 class="medium-text" style="text-align: center;">{{ set.title }}</h1>
-            <h3 class="small-text" style="text-align: center;">{{ set.cards.length }} Cards</h3>
-            <p class="tiny-text">{{ set.description }}</p>
+            <h1 class="medium-text has-text-centered" style="text-align: center;">{{ set.title }}</h1>
+            <h3 class="small-text has-text-centered" style="text-align: center;">{{ set.cards.length }} Cards</h3>
+            <p class="tiny-text has-text-centered">{{ set.description }}</p>
         </div>
     </div>
 </template>
