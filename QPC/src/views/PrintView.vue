@@ -1,37 +1,86 @@
 <template>
     <NavBar></NavBar>
-    <div id="print" :class="[
+    <div id="print" @keyup.esc="this.$data.printView = false" :class="[
         $store.state.settings.theme,
         $store.state.settings.accessibility.txtgradient,
         $store.state.settings.accessibility.txtstyle,
     ]">
         <br />
-        <div class="container mobile">
-            <p style="text-align: center" class="medium-text">
-                WIP - Will be the page you CTRL+P on (or click a button, i guess i can do that too)<br /><br />
+        <div class="container mobile centered" v-if="!this.id">
+            <p class="medium-text">
+                Hey! You should really only be accessing this page from the dashboard, or from a bookmark link with the
+                set
+                id in the url. As of right now, this function is unavailable because the id doesn't exist, or is
+                invalid.
             </p>
+            <br /><br />
+            <router-link :to="'/dashboard'"><button class="button">Go To Dashboard</button></router-link>
+        </div>
+        <div class="container mobile" v-if="this.id">
+            <h1 class="large-text" style="text-align: center">View/Edit/Print - {{ this.$data.set.title }}</h1>
+            <h4 class="small-text" style="text-align: center">You can directly edit the existing cards, add new cards,
+                or toggle print view, which hides everything but the card set itself, and opens the print window.</h4>
+            <hr>
+            <div class="centered">
+                <p class="tiny-text">Print view can be toggled off by pressing the escape or "esc" key.
+                </p>
+                <br>
+                <button class="button">Enter Print View</button> &nbsp; &nbsp; <button class="button"
+                    @click="this.$data.editmode = !this.$data.editmode">Toggle Edit
+                    Mode {{ this.$data.editmode ? 'Off' : 'On' }}</button>
+
+            </div>
+            <hr>
+            <CardCard v-for="card in $data.set.cards" :key="card.id" :term="card.term" :definition="card.definition"
+                :id="card.id" :deleteSelf="deleteCard" :editmode="$data.editmode" :saveEdits="$data.set.saveChanges" :card="card">
+            </CardCard>
+            <br>
+            <div class="centered">
+                <button class="button">Add Card</button>
+            </div>
+
         </div>
         <div class="is-fullheight-60vh"></div>
         <FooterObject></FooterObject>
     </div>
 </template>
-<style scoped>
 
-</style>
 <script>
 import NavBar from "@/components/NavbarMenu.vue";
 import FooterObject from "@/components/FooterObject.vue";
+import CardCard from "@/components/CardCard.vue";
 export default {
     name: "PrintView",
+    props: ["id"],
     components: {
         NavBar,
         FooterObject,
+        CardCard
     },
-    beforeCreate() {
+    beforeMount() {
         this.$store.dispatch('mapCards')
+        this.getSet()
     },
     data() {
-        return {};
+        return {
+            set: {},
+            printView: false,
+            editmode: false
+        };
+    },
+    methods: {
+        getSet() {
+            if (!this.id) return;
+            this.$data.set = this.$store.state.cards.cardSets.filter((set) => set.id == this.id)[0]
+            if (this.$data.set == {}) this.id = null;
+        },
+        addCard() {
+
+        },
+        deleteCard(id) {
+            // it may seem like you'd be able to just pass in $data.set.deleteCard as a prop, but you lose the proper state and it will fail
+            this.$data.set.deleteCard(id)
+        }
     },
 };
 </script>
