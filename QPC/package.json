@@ -11,12 +11,13 @@
     "css-watch": "npm run css-build -- --watch"
   },
   "dependencies": {
-    "vue": "^3.2.41",
-    "vue-router": "^4.0.13",
-    "vuex": "^4.0.2",
     "bulma": "^0.9.4",
     "core-js": "^3.25.5",
-    "node-sass": "^7.0.3"
+    "jspdf": "^2.5.1",
+    "node-sass": "^7.0.3",
+    "vue": "^3.2.41",
+    "vue-router": "^4.0.13",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
