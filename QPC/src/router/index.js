@@ -26,9 +26,10 @@ const router = createRouter({
       component: DashboardView
     },
     {
-      path: "/print",
-      name: "Print Set",
-      component: PrintView
+      path: "/print/:id",
+      name: "Edit/Print/View Set",
+      component: PrintView,
+      props: true
     },
     // Technically, these two below could be lazy loaded but in reality I didn't
     // see any real load time issues with it so I am electing to ignore it

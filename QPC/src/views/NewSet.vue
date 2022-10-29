@@ -8,7 +8,7 @@
         <br />
         <div class="container mobile">
             <p style="text-align: center" class="medium-text">
-               New set creator goes here- may as well add the functionality if its like. 1 more step than usual lol<br /><br />
+               Coming Soon!<br /><br />
             </p>
         </div>
         <div class="is-fullheight-60vh"></div>

@@ -16,7 +16,6 @@ class CardSet {
         this.description = 'No Description Set'
         this.cards = []
         this.dateCreated = new Date().toLocaleDateString()
-        this.dateLastViewed = this.dateCreated
         this.dateLastEdited = this.dateCreated
         this.imported = imported
     }
@@ -35,7 +34,6 @@ class CardSet {
             description: this.description,
             cards: this.cards,
             dateCreated: this.dateCreated,
-            dateLastViewed: this.dateLastViewed,
             dateLastEdited: this.dateLastEdited,
             imported: this.imported
         }
@@ -54,15 +52,24 @@ class CardSet {
         this.cards.push(card)
         return card;
     }
+    deleteCard(id) {
+        this.cards = this.cards.filter((card) => card.id != id)
+        this.saveChanges()
+    }
     createSet(title, description) {
         this.title = title
         this.description = description
         store.state.cards.cardSets.push(this)
-        localStorage.setItem("cardSets", JSON.stringify(store.state.cards.cardSets.map((card) => card.toJSON())))
+        this.saveChanges()
         console.log("[Actions] New set created, updated Local Storage, and Vuex Store")
     }
-    deleteCard(id) {
-        this.cards = this.cards.filter((card) => card.id != id)
+    saveChanges() {
+        this.dateLastEdited = new Date().toLocaleDateString()
+        localStorage.setItem("cardSets", JSON.stringify(store.state.cards.cardSets.map((card) => card.toJSON())))
+    }
+    deleteSelf() {
+        store.state.cards.cardSets.splice(store.state.cards.cardSets.indexOf(this), 1)
+        this.saveChanges()
     }
 }
 export { CardSet }

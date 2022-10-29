@@ -55,7 +55,8 @@
                 <br>
                 <button class="button centered on-hover-grow"
                     @click="this.previewSet()">Preview</button>&nbsp;&nbsp;&nbsp;
-                <button class="button centered on-hover-grow" @click="this.createSet()">Done</button>
+                <router-link :to="'/dashboard'"><button class="button centered on-hover-grow"
+                        @click="this.createSet()">Done</button></router-link>
             </div>
             <br>
             <hr class="w40">
@@ -113,7 +114,7 @@ export default {
             this.parseData()
             setTimeout(() => {
                 // if the preview was never run, make sure we actually make the cards lol
-                if(!this.$data.previewing) this.$data.cardSet.createCards(this.$data.parsed)
+                if (!this.$data.previewing) this.$data.cardSet.createCards(this.$data.parsed)
                 this.$data.cardSet.createSet(this.$data.set.title, this.$data.set.description)
                 this.text = ''
                 this.set = {
