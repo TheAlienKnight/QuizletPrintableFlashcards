@@ -5,7 +5,6 @@ class FlashcardPDF {
     widthCenter;
     heightCenter;
     constructor(cardSet) {
-        console.log(cardSet)
         this.cardSet = cardSet
         this.doc = new jsPDF({
             orientation: 'landscape',
@@ -47,7 +46,7 @@ class FlashcardPDF {
         this.doc.setFontSize(fontSize)
     }
     getFile() {
-        this.doc.save('testing.pdf')
+        this.doc.save(`${this.cardSet.title.replace(/([^a-z0-9]+)/gi, '')}.pdf`)
     }
     splitLines(text, maxMM) {
         return this.doc.splitTextToSize(text, maxMM ? maxMM : 140);
