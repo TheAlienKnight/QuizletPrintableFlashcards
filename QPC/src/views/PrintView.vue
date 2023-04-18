@@ -1,12 +1,11 @@
 <template>
-    <NavBar v-if="!printView"></NavBar>
     <div id="print" :class="[
         $store.state.settings.theme,
         $store.state.settings.accessibility.txtgradient,
         $store.state.settings.accessibility.txtstyle,
     ]">
-        <br />
-        <div v-if="!printView">
+        <div class="hero is-fullheight">
+            <NavBar></NavBar>
             <div class="container mobile centered" v-if="!this.id">
                 <p class="medium-text">
                     Hey! You should really only be accessing this page from the dashboard, or from a bookmark link with
@@ -45,7 +44,6 @@
                 </div>
 
             </div>
-            <div class="is-fullheight-20vh"></div>
             <FooterObject></FooterObject>
         </div>
     </div>

@@ -1,78 +1,76 @@
 <template>
-    <NavBar></NavBar>
     <div id="importset" :class="[
         $store.state.settings.theme,
         $store.state.settings.accessibility.txtgradient,
         $store.state.settings.accessibility.txtstyle,
     ]">
-        <br />
-        <div class="container mobile">
-            <h1 class="large-text has-text-centered">Import Quizlet Set</h1>
-            <h4 class="small-text has-text-centered">Takes text data and creates the same cards here!</h4>
-            <br>
-            <div class="columns w50">
-                <div class="column">
-                    <div class="field">
-                        <label class="label has-text-centered">Term/Definition Separator</label>
-                        <div class="control">
-                            <input class="input" type="text" placeholder="" v-model="$data.separators.term">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label class="label has-text-centered">Set Title</label>
-                        <div class="control">
-                            <input class="input" type="text" placeholder="" v-model="$data.set.title">
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="field">
-                        <label class="label has-text-centered">Row Separator</label>
-                        <div class="control">
-                            <input class="input" type="text" placeholder="" v-model="$data.separators.row">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label class="label has-text-centered">Set Description</label>
-                        <div class="control">
-                            <input class="input" type="text" placeholder="" v-model="$data.set.description">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="w60">
-                <div class="field">
-                    <label class="label has-text-centered">Exported Flashcard Text</label>
-                    <textarea class="textarea" placeholder="" rows="10" v-model="$data.text"></textarea>
-                </div>
-            </div>
-            <br>
-            <hr class="w40">
-            <br>
-            <div class="w60 centered has-text-centered">
-                <p class="small-text">Found <b>{{ $data.parsed.length }}</b> Cards</p>
-                <p class="small-text">You can choose to preview the cards, or click done to finish.</p>
+        <div class="hero is-fullheight">
+            <NavBar></NavBar>
+            <div class="container mobile">
+                <h1 class="large-text has-text-centered">Import Quizlet Set</h1>
+                <h4 class="small-text has-text-centered">Takes text data and creates the same cards here!</h4>
                 <br>
-                <button class="button centered on-hover-grow"
-                    @click="this.previewSet()">Preview</button>&nbsp;&nbsp;&nbsp;
-                <router-link :to="'/dashboard'"><button class="button centered on-hover-grow"
-                        @click="this.createSet()">Done</button></router-link>
+                <div class="columns">
+                    <div class="column">
+                        <div class="field">
+                            <label class="label has-text-centered">Term/Definition Separator</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="" v-model="$data.separators.term">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label has-text-centered">Set Title</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="" v-model="$data.set.title">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="field">
+                            <label class="label has-text-centered">Row Separator</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="" v-model="$data.separators.row">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label has-text-centered">Set Description</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="" v-model="$data.set.description">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w30">
+                    <div class="field">
+                        <label class="label has-text-centered">Exported Flashcard Text</label>
+                        <textarea class="textarea" placeholder="" rows="10" v-model="$data.text"></textarea>
+                    </div>
+                </div>
+                <br>
+                <hr class="w30">
+                <br>
+                <div class="w30 centered has-text-centered">
+                    <p class="small-text">Found <b>{{ $data.parsed.length }}</b> Cards</p>
+                    <p class="small-text">You can choose to preview the cards, or click done to finish.</p>
+                    <br>
+                    <button class="button centered on-hover-grow"
+                        @click="this.previewSet()">Preview</button>&nbsp;&nbsp;&nbsp;
+                    <router-link :to="'/dashboard'"><button class="button centered on-hover-grow"
+                            @click="this.createSet()">Done</button></router-link>
+                </div>
+                <br>
+                <hr class="w30">
+                <br>
+                <div v-if="$data.previewing">
+                    <CardCard v-for="card in $data.cardSet.cards" :key="card.id" :term="card.term"
+                        :definition="card.definition"></CardCard>
+                </div>
             </div>
-            <br>
-            <hr class="w40">
-            <br>
-            <div v-if="$data.previewing">
-                <CardCard v-for="card in $data.cardSet.cards" :key="card.id" :term="card.term"
-                    :definition="card.definition"></CardCard>
-            </div>
+            <FooterObject></FooterObject>
         </div>
-        <div class="is-fullheight-60vh"></div>
-        <FooterObject></FooterObject>
     </div>
 </template>
-<style scoped>
-
-</style>
+<style scoped></style>
 <script>
 import CardCard from "@/components/CardCard.vue"
 import { CardSet } from '@/classes/CardSet.js'
