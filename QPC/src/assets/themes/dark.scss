@@ -8,7 +8,9 @@ DARK THEME SPECIFICS
 #about.dark,
 #home.dark,
 #print.dark,
-#dashboard.dark {
+#dashboard.dark,
+#importset.dark,
+#newset.dark {
     background-color: $basically-black;
     color: white;
 }
@@ -27,7 +29,15 @@ DARK THEME SPECIFICS
 a.dark {
     color: $gold;
 }
-
+.dark .cardcard .box {
+    background-color: $dark;
+    border: 1px solid $gold;
+    border-radius: 8px;
+}
+.dark .is-separator {
+    background-color: $gold;
+    width: 1px !important;
+}
 .dark a:hover,
 a.dark:hover {
     color: $blue;

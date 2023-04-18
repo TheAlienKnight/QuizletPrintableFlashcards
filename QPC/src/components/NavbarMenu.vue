@@ -19,11 +19,17 @@
                 <router-link class="navbar-item attention" :to="'/'">
                     Home
                 </router-link>
+                <router-link class="navbar-item attention" :to="'/create'">
+                    Create
+                </router-link>
                 <img src="../assets/img/logo-tall.svg" width="70" height="70"
                     style="margin-left: 5px; margin-top: 5px; margin-bottom: 5px; margin-top: 5px;" />
 
                 <router-link class="navbar-item attention" :to="'/dashboard'">
                     Dashboard
+                </router-link>
+                <router-link class="navbar-item attention" :to="'/import'">
+                    Import
                 </router-link>
             </div>
         </div>
