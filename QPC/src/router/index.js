@@ -1,7 +1,7 @@
 // note to self: document what these pages do
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import AboutView from "../views/AboutView.vue";
+import FAQView from "../views/FAQView.vue";
 import PrintView from "../views/PrintView.vue";
 import DashboardView from "../views/DashboardView.vue";
 import NewSet from "../views/NewSet.vue";
@@ -16,9 +16,9 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: "/about",
-      name: "About",
-      component: AboutView
+      path: "/faq",
+      name: "FAQ",
+      component: FAQView
     },
     {
       path: "/dashboard",
