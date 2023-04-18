@@ -17,7 +17,7 @@
             <p style="text-align: center" class="medium-text">
                 Quizlet, Inc. removed the ability to print on flashcards. I wanted it back.<br /><br />
             </p>
-            <button class="button is-success">Print Your Quizlet Sets</button>
+        <router-link :to="'/import'"><button class="button is-success">Print Your Quizlet Sets</button></router-link>
         </div>
         <div class="is-fullheight-20vh"></div>
         <FooterObject></FooterObject>

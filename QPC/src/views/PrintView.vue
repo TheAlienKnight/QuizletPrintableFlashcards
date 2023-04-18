@@ -22,7 +22,7 @@
                 <h1 class="large-text" style="text-align: center">View/Edit/Print - {{ this.$data.set.title }}</h1>
                 <h4 class="small-text" style="text-align: center">You can directly edit the existing cards, add new
                     cards,
-                    or toggle print view, which hides everything but the card set itself, and opens the print window.
+                    or generate a PDF to print on flashcards.
                 </h4>
                 <hr>
                 <div class="centered">
