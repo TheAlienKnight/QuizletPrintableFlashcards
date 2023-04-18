@@ -10,7 +10,7 @@
             <div class="column">
                 <div class="box listing">
                     <p class="small-text" style="text-align: center">
-                        <b>AlienKnight</b> - <b>2023</b>
+                        <b>© AJ Nicoloff</b> - <b>2023</b>
                     </p>
                     <p class="small-text" style="text-align: center">
                         <a href="https://github.com/TheAlienKnight/QuizletPrintableFlashcards">Github</a>&nbsp; |

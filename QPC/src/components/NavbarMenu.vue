@@ -6,8 +6,8 @@
         $store.state.settings.accessibility.txtstyle,
     ]" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a role="button" id="navBurger" class="navbar-burger" aria-label="menu" aria-expanded="true"
-                data-target="nav" @click="toggleBurger()">
+            <a role="button" id="navBurger" class="navbar-burger" aria-label="menu" aria-expanded="true" data-target="nav"
+                @click="toggleBurger()">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -16,15 +16,17 @@
 
         <div id="nav" :class="[burger ? 'navbar-menu is-active' : 'navbar-menu']">
             <div class="navbar-start" style="text-align: center; margin: auto">
+                <img src="../assets/img/logo-tall.svg" width="70" height="70"
+                    style="margin-left: 5px; margin-top: 5px; margin-bottom: 5px; margin-top: 5px;" />
                 <router-link class="navbar-item attention" :to="'/'">
                     Home
+                </router-link>
+                <router-link class="navbar-item attention" :to="'/faq'">
+                    FAQ
                 </router-link>
                 <router-link class="navbar-item attention" :to="'/create'">
                     Create
                 </router-link>
-                <img src="../assets/img/logo-tall.svg" width="70" height="70"
-                    style="margin-left: 5px; margin-top: 5px; margin-bottom: 5px; margin-top: 5px;" />
-
                 <router-link class="navbar-item attention" :to="'/dashboard'">
                     Dashboard
                 </router-link>

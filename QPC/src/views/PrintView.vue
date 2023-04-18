@@ -1,12 +1,11 @@
 <template>
-    <NavBar v-if="!printView"></NavBar>
     <div id="print" :class="[
         $store.state.settings.theme,
         $store.state.settings.accessibility.txtgradient,
         $store.state.settings.accessibility.txtstyle,
     ]">
-        <br />
-        <div v-if="!printView">
+        <div class="hero is-fullheight">
+            <NavBar></NavBar>
             <div class="container mobile centered" v-if="!this.id">
                 <p class="medium-text">
                     Hey! You should really only be accessing this page from the dashboard, or from a bookmark link with
@@ -22,12 +21,11 @@
                 <h1 class="large-text" style="text-align: center">View/Edit/Print - {{ this.$data.set.title }}</h1>
                 <h4 class="small-text" style="text-align: center">You can directly edit the existing cards, add new
                     cards,
-                    or toggle print view, which hides everything but the card set itself, and opens the print window.
+                    or generate a PDF to print on flashcards.
                 </h4>
                 <hr>
                 <div class="centered">
-                    <br>
-                    <button class="button" @click="this.make4x6PDF()">Print Flashcards (4x6, or 3x5)</button>&nbsp;
+                    <button class="button" @click="this.makePDF()">Print Flashcards (4x6, or 3x5)</button>&nbsp;
                     &nbsp;
                     <button class="button"
                         @click="this.$data.editmode = !this.$data.editmode; this.$data.printMode = 'list'">Toggle Edit
@@ -40,12 +38,12 @@
                     :card="card">
                 </CardCard>
                 <br>
-                <div class="centered">
-                    <button class="button">Add Card</button>
+                <div class="centered" v-if="this.$data.editmode">
+                    <button class="button" @click="addCard()">Add Card</button>&nbsp;&nbsp;
+                    <button class="button" @click="this.$data.editmode = !this.$data.editmode;">Turn Off Edit Mode</button>
                 </div>
 
             </div>
-            <div class="is-fullheight-20vh"></div>
             <FooterObject></FooterObject>
         </div>
     </div>
@@ -82,7 +80,9 @@ export default {
             if (this.$data.set == {}) this.id = null;
         },
         addCard() {
-
+            this.$data.set.createCard("New Term", "New Definition")
+            // we probably should save it after this too, to avoid any weird memory things
+            this.$data.set.saveChanges()
         },
         deleteCard(id) {
             // it may seem like you'd be able to just pass in $data.set.deleteCard as a prop, but you lose the proper state and it will fail
