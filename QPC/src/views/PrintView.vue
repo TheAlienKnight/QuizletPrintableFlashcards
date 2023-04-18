@@ -26,7 +26,6 @@
                 </h4>
                 <hr>
                 <div class="centered">
-                    <br>
                     <button class="button" @click="this.makePDF()">Print Flashcards (4x6, or 3x5)</button>&nbsp;
                     &nbsp;
                     <button class="button"
