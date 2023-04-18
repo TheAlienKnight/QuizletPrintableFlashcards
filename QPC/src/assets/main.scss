@@ -66,13 +66,13 @@ label {
 
 // Containers on mobiles are a little odd
 .container.mobile {
+    width: 100%;
     @include touch {
         width: 90%;
         margin: auto;
 
     }
 }
-
 // Navbar customization
 .navbar .navbar-item:hover,
 .navbar .navbar-link.attention:hover,

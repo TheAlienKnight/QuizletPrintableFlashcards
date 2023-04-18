@@ -8116,10 +8116,12 @@ label {
   font-style: normal;
   font-weight: thin; }
 
-@media screen and (max-width: 1023px) {
-  .container.mobile {
-    width: 90%;
-    margin: auto; } }
+.container.mobile {
+  width: 100%; }
+  @media screen and (max-width: 1023px) {
+    .container.mobile {
+      width: 90%;
+      margin: auto; } }
 
 .navbar .navbar-item:hover,
 .navbar .navbar-link.attention:hover,
