@@ -68,6 +68,9 @@ export default {
     },
     methods: {
         createSet() {
+            // add default card
+            this.$data.cardSet.createCard("Smarty Pants", "You! You've got this, you'll rock whatever you're studying for!")
+            this.$data.cardSet.saveChanges()
             this.$data.cardSet.createSet(this.$data.set.title, this.$data.set.description)
         }
     }
