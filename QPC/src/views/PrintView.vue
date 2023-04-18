@@ -40,8 +40,9 @@
                     :card="card">
                 </CardCard>
                 <br>
-                <div class="centered">
-                    <button class="button">Add Card</button>
+                <div class="centered" v-if="this.$data.editmode">
+                    <button class="button" @click="addCard()">Add Card</button>&nbsp;&nbsp;
+                    <button class="button" @click="this.$data.editmode = !this.$data.editmode;">Turn Off Edit Mode</button>
                 </div>
 
             </div>
@@ -82,7 +83,9 @@ export default {
             if (this.$data.set == {}) this.id = null;
         },
         addCard() {
-
+            this.$data.set.createCard("New Term", "New Definition")
+            // we probably should save it after this too, to avoid any weird memory things
+            this.$data.set.saveChanges()
         },
         deleteCard(id) {
             // it may seem like you'd be able to just pass in $data.set.deleteCard as a prop, but you lose the proper state and it will fail
