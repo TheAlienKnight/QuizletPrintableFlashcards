@@ -27,7 +27,7 @@
                 <hr>
                 <div class="centered">
                     <br>
-                    <button class="button" @click="this.make4x6PDF()">Print Flashcards (4x6, or 3x5)</button>&nbsp;
+                    <button class="button" @click="this.makePDF()">Print Flashcards (4x6, or 3x5)</button>&nbsp;
                     &nbsp;
                     <button class="button"
                         @click="this.$data.editmode = !this.$data.editmode; this.$data.printMode = 'list'">Toggle Edit
