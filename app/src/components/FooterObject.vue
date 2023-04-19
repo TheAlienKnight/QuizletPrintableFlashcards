@@ -14,8 +14,7 @@
                     </p>
                     <p class="small-text" style="text-align: center">
                         <a href="https://github.com/TheAlienKnight/QuizletPrintableFlashcards">Github</a>&nbsp; |
-                        &nbsp;<a href="Quizlet">Quizlet</a>&nbsp; |
-                        &nbsp;<a href="https://rainwave.cc/">Rainwave Radio (Great for studying)</a>
+                        &nbsp;<a href="https://rainwave.cc/">Rainwave Radio</a>
                     </p>
                     <br />
                     <hr style="width: 35%; margin: auto" />

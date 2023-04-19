@@ -8,7 +8,8 @@ DARK THEME SPECIFICS
 #print.dark,
 #dashboard.dark,
 #importset.dark,
-#newset.dark {
+#newset.dark,
+#faq.dark {
   background-color: #0d0d0d;
   color: white; }
 

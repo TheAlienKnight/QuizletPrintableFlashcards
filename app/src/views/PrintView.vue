@@ -4,7 +4,10 @@
         $store.state.settings.accessibility.txtgradient,
         $store.state.settings.accessibility.txtstyle,
     ]">
-        <div class="hero is-fullheight">
+        <div :class="[
+                $store.state.settings.theme,
+                $store.state.settings.accessibility.txtgradient,
+                $store.state.settings.accessibility.txtstyle, 'hero is-fullheight']">
             <NavBar></NavBar>
             <div class="container mobile centered" v-if="!this.id">
                 <p class="medium-text">
@@ -44,6 +47,7 @@
                 </div>
 
             </div>
+            <div class="is-fullheight-10vh"></div>
             <FooterObject></FooterObject>
         </div>
     </div>
