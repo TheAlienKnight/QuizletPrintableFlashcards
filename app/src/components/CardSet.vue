@@ -18,7 +18,7 @@
                     continue!</b>
             </div>
             <div class="centered">
-                <button class="button" @click="deleteSet()">Delete</button>
+                <button class="button" @click="deleteSet()">Delete</button>&nbsp;&nbsp;
                 <router-link :to="'/print/'+set.id"><button class="button">Print/Edit/View</button></router-link>
             </div>
         </div>

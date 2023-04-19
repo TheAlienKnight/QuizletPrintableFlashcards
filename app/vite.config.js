@@ -6,7 +6,7 @@ import vueJsx from "@vitejs/plugin-vue-jsx";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), vueJsx(), VitePWA({ registerType: 'prompt', mode: "production", manifest: { name: "Quizlet Flashcard Printer", short_name: "QPC", description: "Print flashcards on 3x5 or 4x6!", display: 'fullscreen'} })
+  plugins: [vue(), vueJsx(), VitePWA({ registerType: 'prompt', mode: "production", manifest: { name: "Flashcard Printer + Study Tool", short_name: "Flashcard Toolkit", description: "Print flashcards on 3x5 or 4x6, make study sets, or import them from other sites!", display: 'fullscreen'} })
   ],
   resolve: {
     alias: {

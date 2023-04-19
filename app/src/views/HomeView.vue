@@ -4,20 +4,23 @@
         $store.state.settings.accessibility.txtgradient,
         $store.state.settings.accessibility.txtstyle,
     ]">
-        <div class="hero is-fullheight">
+        <div :class="[
+                $store.state.settings.theme,
+                $store.state.settings.accessibility.txtgradient,
+                $store.state.settings.accessibility.txtstyle, 'hero is-fullheight']">
             <NavBar></NavBar>
             <img :class="[
                 'image',
                 'is-home-logo',
                 'on-hover-grow',
             ]" src="../assets/img/logo-wide.svg" />
-            <h1 class="large-text" style="text-align: center">Quizlet Flashcard Printer</h1>
+            <h1 class="large-text" style="text-align: center">Flashcard Toolkit</h1>
             <br />
             <div class="container mobile home">
                 <p style="text-align: center" class="medium-text">
-                    Quizlet, Inc. removed the ability to print on flashcards. I wanted it back.<br /><br />
+                    A free, offline Flashcard Printer + Study Tool<br /><br />
                 </p>
-                <router-link :to="'/import'"><button class="button is-success">Print Your Quizlet
+                <router-link :to="'/import'"><button class="button is-success">Print Your Flashcard
                         Sets</button></router-link>
             </div>
             <div class="is-fullheight-10vh"></div>

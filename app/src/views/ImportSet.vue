@@ -4,10 +4,13 @@
         $store.state.settings.accessibility.txtgradient,
         $store.state.settings.accessibility.txtstyle,
     ]">
-        <div class="hero is-fullheight">
+        <div :class="[
+                $store.state.settings.theme,
+                $store.state.settings.accessibility.txtgradient,
+                $store.state.settings.accessibility.txtstyle, 'hero is-fullheight']">
             <NavBar></NavBar>
             <div class="container mobile">
-                <h1 class="large-text has-text-centered">Import Quizlet Set</h1>
+                <h1 class="large-text has-text-centered">Import Study Set</h1>
                 <h4 class="small-text has-text-centered">Takes text data and creates the same cards here!</h4>
                 <br>
                 <div class="columns">
@@ -66,6 +69,7 @@
                         :definition="card.definition"></CardCard>
                 </div>
             </div>
+            <div class="is-fullheight-10vh"></div>
             <FooterObject></FooterObject>
         </div>
     </div>

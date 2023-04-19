@@ -4,7 +4,10 @@
         $store.state.settings.accessibility.txtgradient,
         $store.state.settings.accessibility.txtstyle,
     ]">
-        <div class="hero is-fullheight">
+        <div :class="[
+                $store.state.settings.theme,
+                $store.state.settings.accessibility.txtgradient,
+                $store.state.settings.accessibility.txtstyle, 'hero is-fullheight']">
             <NavBar></NavBar>
             <div class="container mobile">
                 <h1 class="large-text" style="text-align: center">Flashcard Dashboard</h1>

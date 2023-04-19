@@ -4,7 +4,10 @@
         $store.state.settings.accessibility.txtgradient,
         $store.state.settings.accessibility.txtstyle,
     ]">
-        <div class="hero is-fullheight">
+        <div :class="[
+                $store.state.settings.theme,
+                $store.state.settings.accessibility.txtgradient,
+                $store.state.settings.accessibility.txtstyle, 'hero is-fullheight']">
             <NavBar></NavBar>
             <div class="container mobile">
                 <h1 class="large-text has-text-centered">FAQ / About</h1>
@@ -13,7 +16,7 @@
                 <br>
                 <div class="has-text-centered">
                     <p class="small-text"><b>Q:</b> Why make this?</p>
-                    <p class="small-text"><b>A:</b> Quizlet removed the ability to format notes into a PDF that was printable on flashcards. <br>I needed it, and nobody else had re-created the function.</p>
+                    <p class="small-text"><b>A:</b> I needed the ability to print on 3x5, and 4x6 notecards. <br>I then learned, teachers used Quizlets printable flashcard function often, and when it was removed, no other real alternative came about. So I made one.</p>
                     <br>
                     <p class="small-text"><b>Q:</b> Are you affiliated with Quizlet™ or other study sites?</p>
                     <p class="small-text"><b>A:</b> Ha, no. I am not. I am just a 21 year old who wanted to print on flashcards again.</p>
@@ -31,6 +34,7 @@
                     <p class="small-text"><b>A:</b> Of course! When it does, any offline apps you've installed will prompt you to update :)</p>
                 </div>
             </div>
+            <div class="is-fullheight-10vh"></div>
         </div>
         <FooterObject></FooterObject>
     </div>

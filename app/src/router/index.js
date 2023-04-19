@@ -46,7 +46,7 @@ const router = createRouter({
   ],
 });
 router.beforeEach((to, from, next) => {
-  document.title = "QPC -" + " " + to.name;
+  document.title = "Flashcard Toolkit -" + " " + to.name;
   next();
 })
 
